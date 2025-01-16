@@ -2762,3 +2762,16 @@ File Path                                PID  Runtime      # DAGs    # Errors  L
 /opt/airflow/dags/dag-spark-submit.py   2710  0.02s             1           0  0.18s           2025-01-16T13:13:52
 ================================================================================
 [2025-01-16T13:14:42.404+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-01-16T13:15:02.013+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-01-16T13:15:02.013+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-01-16T13:15:02.013+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-01-16T13:15:02.014+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-01-16T13:15:02.017+0000] {manager.py:758} INFO - There are 1 files in /opt/airflow/dags
+[2025-01-16T13:15:02.154+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/dag-spark-submit.py     47  0.04s             0           0
+================================================================================
