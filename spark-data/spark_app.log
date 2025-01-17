@@ -1,0 +1,24 @@
+2025-01-16 14:25:09,840 - INFO - Starting Spark job
+2025-01-16 14:25:09,840 - INFO - Input path: /opt/spark-data/input
+2025-01-16 14:25:09,840 - INFO - Output path: /opt/spark-data/output
+2025-01-16 14:25:09,840 - INFO - Attempting to create Spark session (Attempt 1)
+2025-01-16 14:26:11,060 - WARNING - Failed to create Spark session: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.lang.IllegalArgumentException: requirement failed: Can only call getServletHandlers on a running MetricsSystem
+	at scala.Predef$.require(Predef.scala:281)
+	at org.apache.spark.metrics.MetricsSystem.getServletHandlers(MetricsSystem.scala:89)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:660)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2025-01-16 14:26:16,069 - INFO - Attempting to create Spark session (Attempt 2)

@@ -1,0 +1,24 @@
+[2025-01-16T13:25:05.676+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_processing_dag.spark_submit_job manual__2025-01-16T13:25:05.031760+00:00 [queued]>
+[2025-01-16T13:25:05.681+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_processing_dag.spark_submit_job manual__2025-01-16T13:25:05.031760+00:00 [queued]>
+[2025-01-16T13:25:05.681+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-01-16T13:25:05.689+0000] {taskinstance.py:1382} INFO - Executing <Task(SparkSubmitOperator): spark_submit_job> on 2025-01-16 13:25:05.031760+00:00
+[2025-01-16T13:25:05.694+0000] {standard_task_runner.py:57} INFO - Started process 78 to run task
+[2025-01-16T13:25:05.698+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'spark_processing_dag', 'spark_submit_job', 'manual__2025-01-16T13:25:05.031760+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/spark-processing.py', '--cfg-path', '/tmp/tmpa5qwvz0w']
+[2025-01-16T13:25:05.699+0000] {standard_task_runner.py:85} INFO - Job 23: Subtask spark_submit_job
+[2025-01-16T13:25:05.734+0000] {task_command.py:416} INFO - Running <TaskInstance: spark_processing_dag.spark_submit_job manual__2025-01-16T13:25:05.031760+00:00 [running]> on host f87bef169057
+[2025-01-16T13:25:05.789+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_processing_dag' AIRFLOW_CTX_TASK_ID='spark_submit_job' AIRFLOW_CTX_EXECUTION_DATE='2025-01-16T13:25:05.031760+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-16T13:25:05.031760+00:00'
+[2025-01-16T13:25:05.797+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2025-01-16T13:25:05.798+0000] {spark_submit.py:340} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --name arrow-spark --verbose /opt/spark-apps/sample_spark_app.py /opt/spark-data/input /opt/spark-data/output
+[2025-01-16T13:25:05.896+0000] {spark_submit.py:491} INFO - /home/***/.local/lib/python3.8/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-01-16T13:25:05.897+0000] {spark_submit.py:491} INFO - JAVA_HOME is not set
+[2025-01-16T13:25:05.905+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 156, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark --verbose /opt/spark-apps/sample_spark_app.py /opt/spark-data/input /opt/spark-data/output. Error code is: 1.
+[2025-01-16T13:25:05.907+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=spark_processing_dag, task_id=spark_submit_job, execution_date=20250116T132505, start_date=20250116T132505, end_date=20250116T132505
+[2025-01-16T13:25:05.915+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 23 for task spark_submit_job (Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark --verbose /opt/spark-apps/sample_spark_app.py /opt/spark-data/input /opt/spark-data/output. Error code is: 1.; 78)
+[2025-01-16T13:25:05.921+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-01-16T13:25:05.933+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
